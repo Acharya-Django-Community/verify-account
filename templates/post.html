@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Barcha Postlar ro'yhati</p>
+
+    <hr>
+
+    {% for post in posts %}
+        <h3>Title:{{ post.title }}</h3>
+        <p>Content:{{ post.content }}</p>
+        <p>Created: {{ post.created_at }}</p>
+        <p>Updated: {{ post.updated_at }}</p>
+        <hr>
+    {% empty %}
+        <p>Hozircha post yo‘q</p>
+    {% endfor %}
+  <a href="{% url 'post_create' %}">Yangi Post Qo‘shish</a><br>
+<a href="{% url 'home' %}">Asosiy sahifaga qaytish</a>
+<hr>
+</body>
+</html>
